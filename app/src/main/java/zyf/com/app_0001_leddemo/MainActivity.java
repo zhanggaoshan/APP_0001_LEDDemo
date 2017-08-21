@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
-import zyf.com.harlibrary.HardControl;
+import zyf.com.hardlibrary.HardControl;
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
@@ -25,6 +25,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        HardControl.ledOpen();
         initView();
     }
 

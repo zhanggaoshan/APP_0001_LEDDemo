@@ -1,0 +1,1 @@
+arm-linux-gcc -shared -o libhardcontrol.so hardcontrol.c -I /usr/lib/jvm/java-7-openjdk-amd64/include/ -fPIC  -I /root/zyf/android/android_kernel_uboot/android-5.0.2/prebuilts/ndk/9/platforms/android-19/arch-arm/usr/include/  -nostdlib /root/zyf/android/android_kernel_uboot/android-5.0.2/prebuilts/ndk/9/platforms/android-19/arch-arm/usr/lib/libc.so
