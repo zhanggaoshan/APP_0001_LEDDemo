@@ -24,7 +24,7 @@ static jint fd;
 jint ledOpen(JNIEnv *env, jobject cls)
 {
 	fd = open("/dev/leds", O_RDWR);
-	//__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "native ledOpen : %d", fd);
+	__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "native ledOpen : %d", fd);
 	if (fd >= 0)
 		return 0;
 	else
@@ -33,7 +33,7 @@ jint ledOpen(JNIEnv *env, jobject cls)
 
 void ledClose(JNIEnv *env, jobject cls)
 {
-	//__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "native ledClose ...");
+	__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "native ledClose ...");
 	close(fd);
 }
 
@@ -41,7 +41,7 @@ void ledClose(JNIEnv *env, jobject cls)
 jint ledCtrl(JNIEnv *env, jobject cls, jint which, jint status)
 {
 	int ret = ioctl(fd, status, which);
-	//__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "native ledCtrl : %d, %d, %d", which, status, ret);
+	__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "native ledCtrl : %d, %d, %d", which, status, ret);
 	return ret;
 	//return 0;
 }
@@ -78,7 +78,7 @@ JNI_OnLoad(JavaVM *jvm, void *reserved)
 		return -1;
 		//return JNI_ERR;
 
-	//__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "enter the jni_onload");
+	__android_log_print(ANDROID_LOG_DEBUG, "LEDDemo", "enter the jni_onload");
 	return JNI_VERSION_1_4;
 }
 
